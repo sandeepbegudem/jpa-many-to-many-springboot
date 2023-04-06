@@ -4,6 +4,8 @@ import com.codin9ninja.jpamanytomany.entity.Course;
 import com.codin9ninja.jpamanytomany.entity.Student;
 import com.codin9ninja.jpamanytomany.repository.CourseRepository;
 import com.codin9ninja.jpamanytomany.service.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,10 +24,12 @@ public class StudentCourseController {
 
     @PostMapping("/save")
     public Student addStudent(@RequestBody Student student){
+
+
         return studentService.saveStudent(student);
     }
 
-    @GetMapping
+    @GetMapping("/all-students")
     public List<Student> retrieveAllStudents(){
         return studentService.getAllStudents();
     }
