@@ -4,8 +4,6 @@ import com.codin9ninja.jpamanytomany.entity.Course;
 import com.codin9ninja.jpamanytomany.entity.Student;
 import com.codin9ninja.jpamanytomany.repository.CourseRepository;
 import com.codin9ninja.jpamanytomany.service.StudentService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,12 +37,12 @@ public class StudentCourseController {
         return studentService.getAStudentById(studentId);
     }
 
-    @GetMapping("/locate/{studentName}")
+    @GetMapping("/student-details/{studentName}")
     public List<Student> findByStudentName(@PathVariable String studentName){
         return studentService.retrieveStudentByName(studentName);
     }
 
-    @GetMapping("/search/{price}")
+    @GetMapping("/search/{coursePrice}")
     public List<Course> CourseByPrice(@PathVariable Double coursePrice){
         return courseRepository.findByCoursePrice(coursePrice);
     }
