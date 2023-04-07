@@ -78,6 +78,9 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>
+			jpa-manytomany
+		</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
